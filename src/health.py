@@ -1,57 +1,77 @@
-print("*"*20)
-print("Welcome to oblig 2:")
+def get_ideal_weight(height_m):
+    ideal_weight = 22*height_m**2 # type: ignore
+    ideal_weight = round(ideal_weight,1)
+    return ideal_weight
 
-# -robust spørring
+def addRecord():
+    # -robust spørring
+    while True: # validerer at name ikke er tom
+        name = input("What is your name?: ")
+        if name:
+            break
+        print("Name must contain a string")
 
-while True: # validerer at name ikke er tom
-    name = input("What is your name?: ")
-    if name:
-        break
-    print("Name must contain a string")
+    while True: # validerer at weight ikke er tom eller null eller mindre
+        weight_kg = input("Enter your weight (kg): ")
+        try:
+            if weight_kg:
+                weight_kg = float(weight_kg)
+                if weight_kg >0: 
+                    break
+            print("Invalid weight")
+        except ValueError:
+            print("Please provide a number")
 
-while True: # validerer at weight ikke er tom eller null eller mindre
-    weight_kg = input("Enter your weight (kg): ")
-    try:
-        if weight_kg:
-            weight_kg = float(weight_kg)
-            if weight_kg >0: 
-                break
-        print("Invalid weight")
-    except ValueError:
-        print("Please provide a number")
+    while True: #validerer at heiht ikke er tom eller null eller mindre
+        height_m = input("Enter your height (m): ")
+        try:
+            if height_m:
+                height_m = float(height_m)
+                if height_m >0:
+                    break
+            print("Invalid height")
+        except ValueError:
+            print("Please provide a number")  
 
-while True: #validerer at heiht ikke er tom eller null eller mindre
-    height_m = input("Enter your height (m): ")
-    try:
-        if height_m:
-            height_m = float(height_m)
-            if height_m >0:
-                break
-        print("Invalid height")
-    except ValueError:
-        print("Please provide a number")  
-# -bmi utregning
+    # -bmi utregning
+    bmi = weight_kg/height_m**2
+    bmi = round(bmi,2)
+   
+    
 
-bmi = weight_kg/height_m**2
-print(bmi)
-bmi = round(bmi,2)
-print(bmi)
+    # -bmi categorization
+    bmi_category:str = ""
 
-# -bmi categorization
-bmi_category:str = ""
+    if bmi >= 30:
+        bmi_category = "Obese"
+    elif bmi >= 25 and bmi<30:
+        bmi_category = "Overweight"
+    elif bmi < 25 and bmi>=18.5:
+        bmi_category = "Normal"
+    else:
+        bmi_category = "Underweight"
+    print("Health status: "+bmi_category)
 
-if bmi >= 30:
-    bmi_category = "Obese"
-elif bmi >= 25 and bmi<30:
-    bmi_category = "Overweight"
-elif bmi < 25 and bmi>=18.5:
-    bmi_category = "Normal"
-else:
-    bmi_category = "Underweight"
-print(bmi_category)
+    health_object = {
+        "name":name,
+        "weight_kg": weight_kg,
+        "height_m": height_m,
+        "bmi": bmi,
+        "bmi_category":bmi_category,
+        "ideal_weight": get_ideal_weight(height_m)
+    }
 
-def get_health_advice():
-    match bmi_category:
+    print ("*"*20)
+    print(f"Entry saved ({name}, BMI: {bmi}({bmi_category}),ideal: {health_object['ideal_weight']}, advice: {get_health_advice(health_object)} ) \n")
+    # -object create
+    return health_object
+
+
+def get_health_advice(object):
+    if not object["bmi_category"]:
+        print("object not properly defined")
+        return
+    match object["bmi_category"]:
         case "Obese":
             advice = "Drastically change diet: more protein, cut unnecessary calories like raffined sugar or empty fats, get a gym membership and focus on cardio"
         case "Overweight":
@@ -61,13 +81,10 @@ def get_health_advice():
         case "Underweight":
             advice = "Eat until you are full every meal, dont skip any meals, include saturated fats and protein"
         case _:
-            advice = bmi_category + " is not a valid category"
+            advice = object["bmi_category"] + " is not a valid category"
     return advice
 
-print(get_health_advice())
+#print(get_health_advice(object))
 
-def get_ideal_weight():
-    ideal_weight = 22*height_m**2 # type: ignore
-    return ideal_weight
 
-print(get_ideal_weight())
+

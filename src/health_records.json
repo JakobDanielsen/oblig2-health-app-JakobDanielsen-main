@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Jakob",
+    "weight_kg": 70.0,
+    "height_m": 1.77,
+    "bmi": 22.34,
+    "bmi_category": "Normal",
+    "ideal_weight": 68.9
+  },
+  {
+    "name": "Jesper",
+    "weight_kg": 65.0,
+    "height_m": 1.78,
+    "bmi": 20.52,
+    "bmi_category": "Normal",
+    "ideal_weight": 69.7
+  },
+  {
+    "name": "Johan",
+    "weight_kg": 82.0,
+    "height_m": 1.65,
+    "bmi": 30.12,
+    "bmi_category": "Obese",
+    "ideal_weight": 59.9
+  }
+]
