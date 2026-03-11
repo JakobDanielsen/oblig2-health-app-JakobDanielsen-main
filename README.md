@@ -2,3 +2,9 @@
 # oslomet_oblig_2
 
 Jakob Danielsen
+
+HOW TO RUN: open root folder in terminal, and do
+```bash
+python3 -m src.health_app.main
+
+```

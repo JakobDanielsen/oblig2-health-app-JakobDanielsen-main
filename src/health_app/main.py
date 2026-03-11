@@ -1,5 +1,6 @@
-from health import addRecord,get_health_advice,get_ideal_weight
-from data import saveObject,jsonObject
+from .health import addRecord, get_health_advice, get_ideal_weight
+from .data import saveObject, jsonObject
+
 from collections import Counter
 
 print("\n")
@@ -31,6 +32,7 @@ while True:
             print(f"Total entries: {len(allBMIs)}")
             print(f"Average BMI: {round(sum(allBMIs)/len(allBMIs),2)}")
             print(f"Most common BMI category: {Counter(allBMICategories).most_common(1)[0][0]}") # counter most common gjør det lett å finne typetall fra en liste
+            print(f"{dict(Counter(allBMICategories))}")
 
         case "4":
             print("Saving and quitting") # løsningen min lagrer etter hver gang så en "final save" vil ikke gjøre noe

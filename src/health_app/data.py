@@ -1,8 +1,15 @@
 import json
 
-file_path = "src/health_records.json"
+import os
 
+import os, json
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  
+file_path = os.path.join(BASE_DIR, "health_records.json")
+
+#file_path = "../health_records.json"
+
+# Litt uklart om json skal pushes eller ikke, men jeg tar den med uansett så du har en populert fil
 def saveObject(health_object):
     try:
         try:
