@@ -20,11 +20,12 @@ while True:
                 print("\n")
                 for key, value in entry.items():
                     print(key, value)
-                #print(f"Ideal weight difference: {entry["ideal_weight"]-entry["weight"]}") LEGG TIL IDEAL WEIGHT DIFF
+                print(f"Ideal weight difference: {round(entry['ideal_weight']-entry['weight_kg'],2)} kg")
         case "3":
             print("3 registered")
         case "4":
-            print("4 registered")
+            print("Saving and quitting") # løsningen min lagrer etter hver gang og en "final save" vil ikke gjøre noe
+            break
         case _:
             print("Command not registered. Input a number from 1-4")
 
