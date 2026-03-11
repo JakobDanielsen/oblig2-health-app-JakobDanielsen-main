@@ -46,5 +46,13 @@
     "bmi": 19.83,
     "bmi_category": "Normal",
     "ideal_weight": 59.9
+  },
+  {
+    "name": "Janis",
+    "weight_kg": 75.0,
+    "height_m": 1.8,
+    "bmi": 23.15,
+    "bmi_category": "Normal",
+    "ideal_weight": 71.3
   }
 ]

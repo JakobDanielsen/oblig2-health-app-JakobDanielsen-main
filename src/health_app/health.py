@@ -1,4 +1,4 @@
-#Jeg valgte bevisst å bruke dictionaries istedenfor classes denne oppgaven ettersom vi jobber med ganske simple objekter og dict er mer kompatibelt med json. K-I-S-S: keep it stupid simple
+#Jeg valgte bevisst å bruke dictionaries istedenfor classes denne oppgaven ettersom vi jobber med ganske simple objekter og dict er mer kompatibelt med json(hovedsakelig at man lett kan gå fra dict til json og json til dict). K-I-S-S: keep it stupid simple
 def get_ideal_weight(height_m):
     return round(22*height_m**2,1)
 
@@ -60,7 +60,7 @@ def addRecord():
         "bmi_category":bmi_category,
         "ideal_weight": get_ideal_weight(height_m)
     }
-    
+
     print ("*"*20)
     print(f"Entry saved: \n{name} \nBMI: {bmi} ({bmi_category})\nIdeal weight: {health_object['ideal_weight']} kg \nAdvice: {get_health_advice(health_object)}\n")
 
