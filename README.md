@@ -8,3 +8,7 @@ HOW TO RUN: open root folder in terminal, and do
 python3 -m src.health_app.main
 
 ```
+RUN TESTS: open root folder in terminal and do 
+```bash
+PYTHONPATH=src poetry run pytest -v
+```

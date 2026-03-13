@@ -1,8 +1,4 @@
-import json
-
-import os
-
-import os, json
+import os, json # os skal hjelpe med filpath, ettersom det var litt trøbbel med det når man går fra å kjøre main-py til å runne den som modul
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  
 file_path = os.path.join(BASE_DIR, "health_records.json")

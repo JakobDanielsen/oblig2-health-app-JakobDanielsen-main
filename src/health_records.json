@@ -54,5 +54,21 @@
     "bmi": 23.15,
     "bmi_category": "Normal",
     "ideal_weight": 71.3
+  },
+  {
+    "name": "Anni",
+    "weight_kg": 80.0,
+    "height_m": 1.85,
+    "bmi": 23.37,
+    "bmi_category": "Normal",
+    "ideal_weight": 75.3
+  },
+  {
+    "name": "Eva",
+    "weight_kg": 50.0,
+    "height_m": 1.5,
+    "bmi": 22.22,
+    "bmi_category": "Normal",
+    "ideal_weight": 49.5
   }
 ]
