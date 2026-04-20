@@ -70,5 +70,13 @@
     "bmi": 22.22,
     "bmi_category": "Normal",
     "ideal_weight": 49.5
+  },
+  {
+    "name": "Aleks",
+    "weight_kg": 72.0,
+    "height_m": 1.79,
+    "bmi": 22.47,
+    "bmi_category": "Normal",
+    "ideal_weight": 70.5
   }
 ]
